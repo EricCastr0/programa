@@ -13,10 +13,13 @@ const ServiceDetails = ({ service }) => (
       Detalhes do Atendimento
     </Typography>
     <Typography variant="body2" gutterBottom>
-      <strong>Data:</strong> {service["Data:"]}
+      <strong>Cliente:</strong> {service["Cliente:"]}
     </Typography>
     <Typography variant="body2" gutterBottom>
       <strong>Serviço:</strong> {service["Serviço:"]}
+    </Typography>
+    <Typography variant="body2" gutterBottom>
+      <strong>Data:</strong> {service["Data:"]}
     </Typography>
     <Typography variant="body2" gutterBottom>
       <strong>Tipo de atendimento:</strong> {service["Tipo de atendimento:"]}
@@ -45,7 +48,7 @@ const ServiceList = () => {
 
   // Agrupar serviços por nome do cliente
   const groupedServices = services.reduce((acc, service) => {
-    const clientName = service["Nome do Cliente:"];
+    const clientName = service["Cliente:"];
     if (!acc[clientName]) {
       acc[clientName] = [];
     }
